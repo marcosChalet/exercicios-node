@@ -1,0 +1,12 @@
+.error404-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+.warning-404 {
+  background: #7a0505;
+  border-radius: .2rem;
+}

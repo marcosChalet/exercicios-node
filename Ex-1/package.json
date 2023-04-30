@@ -1,0 +1,13 @@
+{
+  "name": "projeto-basico",
+  "version": "1.0.0",
+  "description": "Projeto básico utilizando a biblioteca http do Node.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch ./src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
