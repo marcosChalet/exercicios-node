@@ -12,7 +12,7 @@ const server = http.createServer((req, res) => {
   res.setHeader('Content-type', 'text/html')
 
   const basename = path.basename(req.url)
-  const foundPage = pages.filter(page => page === basename + '.html').flat(0)
+  const [foundPage] = pages.filter(page => page === basename + '.html')
 
   if (req.url === '/') {
     fs.readFile(path.join(__dirname, '../public/pages/home.html'), (error, data) => {
@@ -24,8 +24,8 @@ const server = http.createServer((req, res) => {
         res.end(data)
       }
     })
-  } else if (foundPage.length === 1) {
-    fs.readFile(path.join(__dirname, `../public/pages/${foundPage[0]}`), (error, data) => {
+  } else if (foundPage) {
+    fs.readFile(path.join(__dirname, `../public/pages/${foundPage}`), (error, data) => {
       if (error) {
         console.error(error)
         res.writeHead(500)
